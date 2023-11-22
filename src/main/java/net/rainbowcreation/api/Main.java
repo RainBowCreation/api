@@ -1,14 +1,45 @@
 package net.rainbowcreation.api;
 
-import net.minecraftforge.fml.common.Mod;
 import net.rainbowcreation.api.compatibles.lobbyspawn;
-import net.rainbowcreation.api.compatibles.event;
 import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main
 {
-    @Mod.Instance
-    public final Main instance = this;
-    public static final event API = new lobbyspawn();
-    public static Logger logger;
+    private static Main instance;
+    private final lobbyspawn lobbyspawnAPI = new lobbyspawn();
+    private static Logger logger;
+    private Map<String, Object> centralMap;
+
+    public static Main getInstance() {
+        if (instance == null) {
+            instance = new Main();
+        }
+        return instance;
+    }
+
+    public Object getValue(String key) {
+        return centralMap.get(key);
+    }
+
+    public void setValue(String key, Object value) {
+        centralMap.put(key, value);
+    }
+
+    public lobbyspawn get() {
+        return lobbyspawnAPI;
+    }
+
+    public static Logger setLogger(Logger logger) {
+        Main.logger = logger;
+        return Main.logger;
+    }
+    public static Logger getLogger() {
+        return logger;
+    }
+    private Main() {
+        centralMap = new HashMap<>();
+    }
 }

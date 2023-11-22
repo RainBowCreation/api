@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a4308de-681e-4235-bad2-37d3a705bb79" name="Changes" comment="api">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/api/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/api/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/api/utils/IString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/api/utils/IString.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +160,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.api [publish]" />
-        <item itemvalue="Gradle.core [build]" />
         <item itemvalue="Gradle.api [clean]" />
+        <item itemvalue="Gradle.core [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700678783442</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="api">
+      <option name="closed" value="true" />
+      <created>1700678872469</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700678872469</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -24,8 +24,8 @@ public class IString {
 
     public static void header(String args) {
         for (String string: Reference.HEADER) {
-            Main.logger.info(string);
+            Main.getLogger().info(string);
         }
-        Main.logger.info(args);
+        Main.getLogger().info(args);
     }
 }
