@@ -15,6 +15,7 @@ public class API
     private Map<String, Object> centralMap;
     private GeneralConfig.Settings settings;
     private GeneralConfig.Bypass bypass;
+    private GeneralConfig.Loginer loginer;
 
     public static API getInstance() {
         if (instance == null) {
@@ -43,6 +44,13 @@ public class API
             bypass = new GeneralConfig.Bypass();
         }
         return bypass;
+    }
+
+    public GeneralConfig.Loginer loginer() {
+        if (loginer == null) {
+            loginer = new GeneralConfig.Loginer();
+        }
+        return loginer;
     }
 
     public lobbyspawn get() {

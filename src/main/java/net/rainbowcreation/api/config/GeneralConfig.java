@@ -12,4 +12,8 @@ public class GeneralConfig {
     public static class Bypass {
         public String[] BYPASS_PLAYER = new String[] { "RainBowCreation", "VocanicZ" };
     }
+
+    public static class Loginer {
+        public boolean ENABLE = false;
+    }
 }
