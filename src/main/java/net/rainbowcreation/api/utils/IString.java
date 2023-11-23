@@ -1,10 +1,10 @@
 package net.rainbowcreation.api.utils;
 
-import net.rainbowcreation.api.Main;
+import net.rainbowcreation.api.API;
 
 
 public class IString {
-    public static String genHeader(String name) {
+    public String genHeader(String name) {
         StringBuilder header = new StringBuilder();
         String c = "#";
         int len = name.length();
@@ -22,10 +22,10 @@ public class IString {
         return header.toString();
     }
 
-    public static void header(String args) {
+    public void header(String args) {
         for (String string: Reference.HEADER) {
-            Main.getLogger().info(string);
+            API.getInstance().getLogger().info(string);
         }
-        Main.getLogger().info(args);
+        API.getInstance().getLogger().info(genHeader(args));
     }
 }
