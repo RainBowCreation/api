@@ -62,3 +62,5 @@ Maven : in your pom.xml:
     </dependency>
 </dependencies>
 ```
+
+java docs https://api.rainbowcreation.net
