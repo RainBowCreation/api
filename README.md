@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  implementation group: 'net.rainbowcreation', name: 'api', version: 'LATEST'
+  implementation group: 'net.rainbowcreation', name: 'api', version: '1.0.0'
 }
 ```
 
@@ -22,7 +22,7 @@ Or in your pom.xml:
     <dependency>
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
-        <version>LATEST</version>
+        <version>1.0.0</version>
     </dependency>
 </dependencies>
 ```
