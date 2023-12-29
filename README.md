@@ -50,7 +50,7 @@ Maven : in your pom.xml:
 <repositories>
     <repository>
         <id>rainbowcreation</id>
-        <url>repo.rainbowcreation.net</url>
+        <url>https://repo.rainbowcreation.net</url>
     </repository>
 </repositories>
 
