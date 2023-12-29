@@ -5,15 +5,14 @@ Gradle : Add the following into your build.gradle:
 
 ```
 repositories {
-  maven {
     maven {
-      id "rainbowcreation"
-      url "repo.rainbowcreation.net"
-  }
+        name = "rainbowcreation"
+        url = "https://repo.rainbowcreation.net"
+    }
 }
 
 dependencies {
-  implementation group: 'net.rainbowcreation', name: 'api', version: '1.0.1-SNAPSHOT'
+    compileOnly "net.rainbowcreation:api:1.0.1-SNAPSHOT"
 }
 ```
 
