@@ -26,6 +26,7 @@ Maven : in your pom.xml:
         <url>repo.rainbowcreation.net</url>
     </repository>
 </repositories>
+
 <dependencies>
     <dependency>
         <groupId>net.rainbowcreation</groupId>
