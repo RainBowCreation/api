@@ -6,23 +6,31 @@ Add the following into your build.gradle:
 ```
 repositories {
   maven {
-    mavenCentral()
+    maven {
+      id "rainbowcreation"
+      url "repo.rainbowcreation.net"
   }
 }
 
 dependencies {
-  implementation group: 'net.rainbowcreation', name: 'core-api', version: 'API-SNAPSHOT'
+  implementation group: 'net.rainbowcreation', name: 'api', version: '1.0.1-SNAPSHOT'
 }
 ```
 
 Or in your pom.xml:
 
 ```
+<repositories>
+    <repository>
+        <id>rainbowcreationn</id>
+        <url>repo.rainbowcreation.net</url>
+    </repository>
+</repositories>
 <dependencies>
     <dependency>
         <groupId>net.rainbowcreation</groupId>
-        <artifactId>corer-api</artifactId>
-        <version>API-SNAPSHOT</version>
+        <artifactId>api</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
