@@ -4,7 +4,7 @@
   <artifactId>core-api</artifactId>
   <packaging>jar</packaging>
   <name>RainBowCreationCore API</name>
-  <version>API</version>
+  <version>API-SNAPSHOT</version>
 
   <properties>
     <maven.deploy.skip>false</maven.deploy.skip>
