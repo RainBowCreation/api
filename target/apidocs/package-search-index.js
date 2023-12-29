@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.rainbowcreation.core.api"},{"l":"net.rainbowcreation.core.api.utils"}];updateSearchResults();
