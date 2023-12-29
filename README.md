@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-  compile "net.rainbowcreation:core-api:API"
+  implementation group: 'net.rainbowcreation', name: 'core-api', version: 'API'
 }
 ```
 
