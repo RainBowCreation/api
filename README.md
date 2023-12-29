@@ -22,7 +22,7 @@ Or in your pom.xml:
 ```
 <repositories>
     <repository>
-        <id>rainbowcreationn</id>
+        <id>rainbowcreation</id>
         <url>repo.rainbowcreation.net</url>
     </repository>
 </repositories>
