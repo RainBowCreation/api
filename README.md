@@ -1,7 +1,34 @@
-## Using RainBowCreation in your plugin
+# Using RainBowCreation in your plugin
 [![Discord](https://img.shields.io/discord/370567347599179787.svg?color=738ad6&label=Join%20RainBowCreation%20Discord&logo=discord&logoColor=ffffff)](https://rainbowcreation.net/discord)
 
-Gradle : Add the following into your build.gradle:
+### For Addon project : in your plugin.yml
+```
+depends: [RainBowCreation, ....]
+```
+### For Stanalone Project 
+You cannot use other Stanalone project in the same server.
+The stucture work like this
+```
+API <-> Addon
+|
+Stanalone
+```
+Change dependency scope to complie and in your main class should look like this
+```
+public class YourPlugin extends JavaPlugin implements ICore {
+    private static YourPlugin instance;
+
+    @Override
+    public void onEnable() {
+        instance = this;
+        .
+        .
+        .
+        new ApiProvider().register(instance); // register instance to api
+
+```
+
+### Gradle : Add the following into your build.gradle:
 
 ```
 repositories {
@@ -16,13 +43,13 @@ dependencies {
 }
 ```
 
-Maven : in your pom.xml:
+### Maven : in your pom.xml:
 
 ```
 <repositories>
     <repository>
         <id>rainbowcreation</id>
-        <url>repo.rainbowcreation.net</url>
+        <url>https://repo.rainbowcreation.net</url>
     </repository>
 </repositories>
 
@@ -31,6 +58,9 @@ Maven : in your pom.xml:
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
         <version>1.0.1-SNAPSHOT</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
+
+java docs https://api.rainbowcreation.net
