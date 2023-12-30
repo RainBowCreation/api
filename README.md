@@ -1,7 +1,35 @@
-## Using RainBowCreation in your plugin
+# Using RainBowCreation in your plugin
 [![Discord](https://img.shields.io/discord/370567347599179787.svg?color=738ad6&label=Join%20RainBowCreation%20Discord&logo=discord&logoColor=ffffff)](https://rainbowcreation.net/discord)
 
-Gradle : Add the following into your build.gradle:
+### For Addon project : in your plugin.yml
+```
+depends: [RainBowCreation, ....]
+```
+### For Stanalone Project 
+You cannot use other Stanalone project in the same server.
+If should be 1 stanalone project and many addon project(s)
+The stucture work like this
+```
+API <-> Addon
+|
+Stanalone
+```
+Change dependency scope to complie and in your main class should look like this
+```
+public class YourPlugin extends JavaPlugin implements ICore {
+    private static YourPlugin instance;
+
+    @Override
+    public void onEnable() {
+        instance = this;
+        .
+        .
+        .
+        new ApiProvider().register(instance); // register instance to api
+
+```
+
+### Gradle : Add the following into your build.gradle:
 
 ```
 repositories {
@@ -11,11 +39,11 @@ repositories {
 }
 
 dependencies {
-  implementation group: 'net.rainbowcreation', name: 'api', version: '1.0.0'
+  compileOnly "net.rainbowcreation:api:1.0.0"
 }
 ```
 
-Maven : in your pom.xml:
+### Maven : in your pom.xml:
 
 ```
 <dependencies>
@@ -23,13 +51,14 @@ Maven : in your pom.xml:
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
         <version>1.0.0</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
 
-### If you want to use Snapshot version
+## If you want to use Snapshot version
 
-Gradle : Add the following into your build.gradle:
+### Gradle : Add the following into your build.gradle:
 
 ```
 repositories {
@@ -44,7 +73,7 @@ dependencies {
 }
 ```
 
-Maven : in your pom.xml:
+### Maven : in your pom.xml:
 
 ```
 <repositories>
@@ -59,6 +88,7 @@ Maven : in your pom.xml:
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
         <version>1.0.1-SNAPSHOT</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
