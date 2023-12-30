@@ -5,7 +5,7 @@
 ```
 depends: [RainBowCreation, ....]
 ```
-### For Stanalone Project 
+### For Stanalone Project
 You cannot use other Stanalone project in the same server.
 The stucture work like this
 ```
@@ -32,6 +32,35 @@ public class YourPlugin extends JavaPlugin implements ICore {
 
 ```
 repositories {
+  maven {
+    mavenCentral()
+  }
+}
+
+dependencies {
+  compileOnly "net.rainbowcreation:api:1.0.1"
+}
+```
+
+### Maven : in your pom.xml:
+
+```
+<dependencies>
+    <dependency>
+        <groupId>net.rainbowcreation</groupId>
+        <artifactId>api</artifactId>
+        <version>1.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
+
+## If you want to use Snapshot version
+
+### Gradle : Add the following into your build.gradle:
+
+```
+repositories {
     maven {
         name = "rainbowcreation"
         url = "https://repo.rainbowcreation.net"
@@ -39,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly "net.rainbowcreation:api:1.0.1-SNAPSHOT"
+    compileOnly "net.rainbowcreation:api:1.0.2-SNAPSHOT"
 }
 ```
 
@@ -57,7 +86,7 @@ dependencies {
     <dependency>
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.2-SNAPSHOT</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
