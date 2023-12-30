@@ -5,58 +5,129 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("unused")
 public class Chat {
+    Component component;
+    String legacy;
+
+    public Chat() {
+        // none
+    }
+
+    public Chat(Component component) {
+        this.component = component;
+        legacy = componentLegacy(component);
+    }
+
+    public Chat(String string, String type) {
+        if (string.isEmpty())
+            return;
+        switch (type.toLowerCase()) {
+            case ("minimessage") : {
+                component = minimessageComponent(string);
+                break;
+            }
+            case ("plain") : {
+                component = plainComponent(string);
+                break;
+            }
+            case ("legacy") : {
+                component = legacyComponent(string);
+                break;
+            }
+        }
+        legacy = componentLegacy(component);
+    }
+
+    public Chat(String minimessage) {
+        component = minimessageComponent(minimessage);
+        legacy = componentLegacy(component);
+    }
+
+    public Component getComponent() {
+        return component;
+    }
+
+    public String getLegacy() {
+        return legacy;
+    }
+
+    public String getColored() {
+        return legacyColored(legacy);
+    }
+
+    public String getMinimessage() {
+        return componentMinimessage(component);
+    }
+
+    public String getPlain() {
+        return componentPlain(component);
+    }
+
+    // deserializer
+
     public static Component minimessageComponent(String minimessage) {
         return MiniMessage.miniMessage().deserialize(minimessage);
     }
-    public static String minimessageLegacy(String minimessage) {
-        return componentLegacy(minimessageComponent(minimessage));
-    }
-    public static String minimessagePlain(String minimessage) {
-        return componentPlain(minimessageComponent(minimessage));
-    }
+
     public static Component legacyComponent(String legacy) {
         return LegacyComponentSerializer.legacyAmpersand().deserialize(legacy);
     }
-    public static String legacyMinimessage(String legacy) {
-        return componentMinimessage(legacyComponent(legacy));
+
+    public static Component plainComponent(String plain) {
+        return PlainTextComponentSerializer.plainText().deserialize(plain);
     }
-    public static String legacyPlain(String legacy) {
-        return componentPlain(legacyComponent(legacy));
-    }
+
+    // serializer
 
     public static String componentPlain(Component component) {
         return PlainTextComponentSerializer.plainText().serialize(component);
     }
+
     public static @NotNull String componentMinimessage(Component component) {
         return MiniMessage.miniMessage().serialize(component);
     }
+
     public static String componentLegacy(Component component) {
         return LegacyComponentSerializer.legacySection().serialize(component);
     }
-    public static Component plainComponent(String plain) {
-        return PlainTextComponentSerializer.plainText().deserialize(plain);
-    }
-    public static String plainLegacy(String plain) {
-        return componentLegacy(plainComponent(plain));
-    }
-    public static String plainMinimessage(String plain) {
-        return componentMinimessage(plainComponent(plain));
-    }
+
+    // colored
+
     public static String legacyColored(String legacy) {
         return ChatColor.translateAlternateColorCodes('&', legacy);
     }
+
+    // converter
+
+    public static String minimessageLegacy(String minimessage) {
+        return new Chat(minimessage).getLegacy();
+    }
+    public static String minimessagePlain(String minimessage) {
+        return new Chat(minimessage).getPlain();
+    }
+
+    public static String legacyMinimessage(String legacy) {
+        return new Chat(legacy, "legacy").getMinimessage();
+    }
+    public static String legacyPlain(String legacy) {
+        return new Chat(legacy, "legacy").getPlain();
+    }
+
+    public static String plainLegacy(String plain) {
+        return new Chat(plain, "plain").getLegacy();
+    }
+    public static String plainMinimessage(String plain) {
+        return new Chat(plain, "plain").getMinimessage();
+    }
+
     public static String componentColored(Component component) {
-        return legacyColored(componentLegacy(component));
+        return new Chat(component).getColored();
     }
+
     public static String minimessageColored(String minimessage) {
-        return legacyColored(minimessageLegacy(minimessage));
-    }
-    public static void sendPlayerMessage(Player player, String minimessage) {
-        player.sendMessage(minimessageColored(minimessage));
+        return new Chat(minimessage).getColored();
     }
 }

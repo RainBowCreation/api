@@ -3,6 +3,7 @@ package net.rainbowcreation.core.api.utils;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Roman {
     private static final int[] VAL = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
     private static final String[] ROMANS = {"m","cm","d","cd","c","xc","l","xl","x","ix","v","iv","i"};

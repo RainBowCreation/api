@@ -29,7 +29,7 @@ public class Bungee {
             out.close();
         }
         catch (Exception e) {
-            Chat.sendPlayerMessage(player, "<red>Error when trying to connect to "+serverName);
+            Action.sendPlayerMessage(player, "<red>Error when trying to connect to "+serverName);
         }
     }
 

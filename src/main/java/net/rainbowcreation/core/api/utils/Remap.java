@@ -15,7 +15,6 @@ public class Remap {
                 return constructor.newInstance();
             }
         } catch(InvocationTargetException | ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException e) {
-            System.err.println("Failed to create an instance of " + srcname);
             e.printStackTrace();
         }
         return null;
@@ -30,7 +29,6 @@ public class Remap {
                 return constructor.newInstance();
             }
         } catch(InvocationTargetException | ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException e) {
-            System.err.println("Failed to create an instance of " + srcname);
             e.printStackTrace();
         }
         return null;
