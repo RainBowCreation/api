@@ -7,7 +7,6 @@ depends: [RainBowCreation, ....]
 ```
 ### For Stanalone Project 
 You cannot use other Stanalone project in the same server.
-If should be 1 stanalone project and many addon project(s)
 The stucture work like this
 ```
 API <-> Addon
