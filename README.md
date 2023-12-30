@@ -34,5 +34,3 @@ Maven : in your pom.xml:
     </dependency>
 </dependencies>
 ```
-### if you want to use latest snapshot version plese direct to 
-https://github.com/RainBowCreation/api/tree/dev
