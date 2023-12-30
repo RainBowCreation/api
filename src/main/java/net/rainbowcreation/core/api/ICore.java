@@ -1,6 +1,5 @@
 package net.rainbowcreation.core.api;
 
-import com.earth2me.essentials.Essentials;
 import net.rainbowcreation.core.api.utils.Bungee;
 import net.rainbowcreation.core.api.utils.Config;
 import net.rainbowcreation.core.api.utils.Console;
@@ -19,8 +18,6 @@ public interface ICore {
     Console getConsole();
     Config getConfig(String name);
     Bungee getBungee();
-    Essentials getEss();
-    boolean isEssEnabled();
     GuiHolder getGuiHolder();
     Map<Player, Boolean> getPlayerLog();
     PluginMessageListener getMessageListener();

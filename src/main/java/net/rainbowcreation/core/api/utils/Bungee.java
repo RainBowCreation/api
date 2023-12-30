@@ -3,7 +3,6 @@ package net.rainbowcreation.core.api.utils;
 import com.google.common.collect.Iterables;
 import net.rainbowcreation.core.api.ICore;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -30,7 +29,7 @@ public class Bungee {
             out.close();
         }
         catch (Exception e) {
-            player.sendMessage(ChatColor.RED+"Error when trying to connect to "+serverName);
+            Action.sendPlayerMessage(player, "<red>Error when trying to connect to "+serverName);
         }
     }
 

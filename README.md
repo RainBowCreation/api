@@ -5,7 +5,7 @@
 ```
 depends: [RainBowCreation, ....]
 ```
-### For Stanalone Project 
+
 You cannot use other Stanalone project in the same server.
 The stucture work like this
 ```
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-  compileOnly "net.rainbowcreation:api:1.0.0"
+  compileOnly "net.rainbowcreation:api:1.0.1"
 }
 ```
 
@@ -49,7 +49,6 @@ dependencies {
     <dependency>
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
-        <version>1.0.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -68,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly "net.rainbowcreation:api:1.0.1-SNAPSHOT"
+    compileOnly "net.rainbowcreation:api:1.0.2-SNAPSHOT"
 }
 ```
 
@@ -86,7 +85,7 @@ dependencies {
     <dependency>
         <groupId>net.rainbowcreation</groupId>
         <artifactId>api</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.2-SNAPSHOT</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>

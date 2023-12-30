@@ -11,7 +11,7 @@ public class Permission {
         return player.hasPermission("group." + group);
     }
     public static void sendPlayerNoPermMessage(Player player) {
-        Chat.sendPlayerMessage(player, "<red>You don't have permission!");
+        Action.sendPlayerMessage(player, "<red>You don't have permission!");
     }
     public static boolean permission(Player player, String permission) {
         if (!hasPermission(player, permission)) {
