@@ -1,5 +1,6 @@
 package net.rainbowcreation.core.api.utils;
 
+import net.rainbowcreation.core.api.ApiProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -13,11 +14,11 @@ public class Console {
     }
 
     public void err(String string) {
-        info(string, "<red>");
+        info(string, "red");
     }
 
     public void info(String string) {
-        info(string, "<purple>");
+        info(string, "light_purple");
     }
 
     public void info(String string, String color) {
@@ -25,8 +26,14 @@ public class Console {
         final String calling_class = stack_trace_elements[2].getClassName();
         final String class_name = calling_class.substring(calling_class.lastIndexOf(".") + 1);
         final String calling_method = stack_trace_elements[2].getMethodName();
+        final String log = "(" + class_name + ") " + "[" + calling_method + "] " + string;
         try {
-            Bukkit.getConsoleSender().sendMessage(Chat.minimessageColored(color + "(" + class_name + ") " + "[" + calling_method + "] " + string));
+            if (ApiProvider.instance.getVersion().startsWith("v1_2")) {
+                Bukkit.getConsoleSender().sendMessage(Chat.getColor(color) + log);
+            }
+            else {
+                Bukkit.getConsoleSender().sendMessage(log);
+            }
         } catch (Exception ignored) {
             plugin.getLogger().info("(" + class_name + ") " + "[" + calling_method + "] " + string);
         }

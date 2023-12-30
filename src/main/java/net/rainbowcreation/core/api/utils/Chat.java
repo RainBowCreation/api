@@ -100,6 +100,12 @@ public class Chat {
         return ChatColor.translateAlternateColorCodes('&', legacy);
     }
 
+    // chat color
+
+    public static net.md_5.bungee.api.ChatColor getColor(String color) {
+        return net.md_5.bungee.api.ChatColor.of(color);
+    }
+
     // converter
 
     public static String minimessageLegacy(String minimessage) {

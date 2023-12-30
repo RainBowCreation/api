@@ -9,7 +9,7 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 import java.util.Map;
 
 public class ApiProvider implements ICore{
-    ICore instance;
+    public static ICore instance;
 
     @Override
     public Plugin getPlugin() {
