@@ -22,4 +22,6 @@ public interface ICore {
     Map<Player, Boolean> getPlayerLog();
     PluginMessageListener getMessageListener();
     FileConfiguration getDefaultConfig();
+    boolean isLobby();
+    boolean usePacketApi();
 }

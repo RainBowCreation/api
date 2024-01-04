@@ -11,6 +11,13 @@
     <maven.deploy.skip>false</maven.deploy.skip>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>codemc-releases</id>
+      <url>https://repo.codemc.io/repository/maven-releases/</url>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>net.md-5</groupId>

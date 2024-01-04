@@ -1,6 +1,7 @@
 package net.rainbowcreation.core.api.utils;
 
 import net.kyori.adventure.text.Component;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -26,5 +27,9 @@ public class Action {
 
     public static void sendPlayerMessage(Player player, String message, String messageType) {
         player.sendMessage(new Chat(message, messageType).getColored());
+    }
+
+    public static void spawnFirework(Location location) {
+        // spawn firework
     }
 }
