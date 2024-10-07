@@ -1,5 +1,6 @@
 # Using RainBowCreation in your plugin
 [![Discord](https://img.shields.io/discord/370567347599179787.svg?color=738ad6&label=Join%20RainBowCreation%20Discord&logo=discord&logoColor=ffffff)](https://rainbowcreation.net/discord)
+![Alt](https://repobeats.axiom.co/api/embed/4df32c99a65ff9a34208d442e417b50328a64d22.svg "Repobeats analytics image")
 
 ### For Addon project : in your plugin.yml
 ```
